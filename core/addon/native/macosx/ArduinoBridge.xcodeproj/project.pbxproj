@@ -1,0 +1,226 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FC912E11511C00E009F3346 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC912E01511C00E009F3346 /* IOKit.framework */; };
+		0FC912E31511C04C009F3346 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC912E21511C04C009F3346 /* Foundation.framework */; };
+		0FC912E91511C192009F3346 /* ArduinoBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FC912E81511C192009F3346 /* ArduinoBridge.m */; };
+		0FC912EE1511C207009F3346 /* ArduinoBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FC912ED1511C207009F3346 /* ArduinoBridge.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0FC912D91511BFF5009F3346 /* libArduinoBridge.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libArduinoBridge.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FC912E01511C00E009F3346 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		0FC912E21511C04C009F3346 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0FC912E81511C192009F3346 /* ArduinoBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ArduinoBridge.m; path = src/ArduinoBridge.m; sourceTree = "<group>"; };
+		0FC912ED1511C207009F3346 /* ArduinoBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ArduinoBridge.h; path = src/ArduinoBridge.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0FC912D61511BFF5009F3346 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC912E31511C04C009F3346 /* Foundation.framework in Frameworks */,
+				0FC912E11511C00E009F3346 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0FC912CE1511BFF5009F3346 = {
+			isa = PBXGroup;
+			children = (
+				0FC912E51511C093009F3346 /* src */,
+				0FC912E41511C054009F3346 /* libs */,
+				0FC912DA1511BFF5009F3346 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0FC912DA1511BFF5009F3346 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0FC912D91511BFF5009F3346 /* libArduinoBridge.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0FC912E41511C054009F3346 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				0FC912E21511C04C009F3346 /* Foundation.framework */,
+				0FC912E01511C00E009F3346 /* IOKit.framework */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		0FC912E51511C093009F3346 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				0FC912E81511C192009F3346 /* ArduinoBridge.m */,
+				0FC912ED1511C207009F3346 /* ArduinoBridge.h */,
+			);
+			name = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0FC912D71511BFF5009F3346 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC912EE1511C207009F3346 /* ArduinoBridge.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0FC912D81511BFF5009F3346 /* ArduinoBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0FC912DD1511BFF5009F3346 /* Build configuration list for PBXNativeTarget "ArduinoBridge" */;
+			buildPhases = (
+				0FC912D51511BFF5009F3346 /* Sources */,
+				0FC912D61511BFF5009F3346 /* Frameworks */,
+				0FC912D71511BFF5009F3346 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ArduinoBridge;
+			productName = ArduinoBridge;
+			productReference = 0FC912D91511BFF5009F3346 /* libArduinoBridge.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0FC912D01511BFF5009F3346 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 0FC912D31511BFF5009F3346 /* Build configuration list for PBXProject "ArduinoBridge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0FC912CE1511BFF5009F3346;
+			productRefGroup = 0FC912DA1511BFF5009F3346 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0FC912D81511BFF5009F3346 /* ArduinoBridge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0FC912D51511BFF5009F3346 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FC912E91511C192009F3346 /* ArduinoBridge.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0FC912DB1511BFF5009F3346 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		0FC912DC1511BFF5009F3346 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0FC912DE1511BFF5009F3346 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		0FC912DF1511BFF5009F3346 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0FC912D31511BFF5009F3346 /* Build configuration list for PBXProject "ArduinoBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FC912DB1511BFF5009F3346 /* Debug */,
+				0FC912DC1511BFF5009F3346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0FC912DD1511BFF5009F3346 /* Build configuration list for PBXNativeTarget "ArduinoBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0FC912DE1511BFF5009F3346 /* Debug */,
+				0FC912DF1511BFF5009F3346 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0FC912D01511BFF5009F3346 /* Project object */;
+}

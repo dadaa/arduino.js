@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this file,
+   - You can obtain one at http://mozilla.org/MPL/2.0/.  -->
+<html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8" />
+	<title>servo</title>
+	<style type="text/css">
+	html {
+		background-color: white;
+	}
+	#label {
+		position: absolute;
+		bottom: 10px;
+		right: 10px;
+		font-size: 100px;
+		color: #black;
+	}
+	</style>
+
+	<script src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript">
+		var PIN = 8;
+		var arduino = null;
+		var value = 0;
+		function loop() {
+			//pulse
+			var ontime = value+500;
+			var offtime = 20000 - ontime;
+			arduino.pulse(PIN, ontime, offtime);
+			$("#label").text(Math.round(value/2000*180));
+			setTimeout(loop, 10);
+		}
+		
+		$(document).ready(function() {
+			arduino = document.arduino;
+			arduino.open("/dev/cu.usbmodemfa131");
+			arduino.pinMode(PIN, true);
+			$("#servo").click(function() {
+				value = Math.floor(Math.random()*2000);
+			});
+			loop();
+  		});
+	</script>
+</head>
+<body>
+<input id="servo" type="button" value="change the angle">
+<div id="label"></div>
+</body>
+</html>

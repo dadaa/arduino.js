@@ -1,0 +1,10 @@
+{
+    "name": "artduino.js", 
+    "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
+    "author": "Daisuke Akatsuka", 
+    "version": "0.1", 
+    "fullName": "artduino.js", 
+    "id": "", 
+    "description": "arduino.js core",
+    "unpack":"true"
+}
