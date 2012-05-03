@@ -11,9 +11,9 @@ const observers = require("api-utils/observer-service");
 const arduino = require("arduino.js");
 
 observers.add(ON_CONTENT, function(dom) {
-	let window = HAS_DOCUMENT_ELEMENT_INSERTED ? dom.defaultView : dom;
-	if (null == window) {
-		return;
-	}
-	dom.wrappedJSObject.arduino = arduino;
+    let window = HAS_DOCUMENT_ELEMENT_INSERTED ? dom.defaultView : dom;
+    if (null == window) {
+        return;
+    }
+    dom.wrappedJSObject.arduino = arduino;
 });

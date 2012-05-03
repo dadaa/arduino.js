@@ -4,45 +4,45 @@
    - You can obtain one at http://mozilla.org/MPL/2.0/.  -->
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="UTF-8" />
-	<title>blink</title>
-	<style type="text/css">
-	html {
-		background-color: black;
-	}
-	#blink-label {
-		position: absolute;
-		bottom: 10px;
-		right: 10px;
-		font-size: 100px;
-		color: gray;
-	}
-	#blink-label.blinking {
-		color: #33FF00;
-	}
-	</style>
+    <meta charset="UTF-8" />
+    <title>blink</title>
+    <style type="text/css">
+    html {
+        background-color: black;
+    }
+    #blink-label {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 100px;
+        color: gray;
+    }
+    #blink-label.blinking {
+        color: #33FF00;
+    }
+    </style>
 
-	<script src="js/jquery-1.7.2.min.js"></script>
-	<script type="text/javascript">
-		var blink = function(value) {
-			var arduino = document.arduino;
-			arduino.analogWrite(8, value);
-			if (value == 255) {
-				$("#blink-label").addClass("blinking");
-			} else {
-				$("#blink-label").removeClass("blinking");
-			}
-			setTimeout(blink, 1000, value == 0 ? 255 : 0);
-		}
-		
-		$(document).ready(function() {
-			var arduino = document.arduino;
-			arduino.open("/dev/cu.usbmodemfa131");
-			arduino.pinMode(8, true);
-			//start blinking
-			blink(0);
-		});
-	</script>
+    <script src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript">
+        var blink = function(value) {
+            var arduino = document.arduino;
+            arduino.analogWrite(8, value);
+            if (value == 255) {
+                $("#blink-label").addClass("blinking");
+            } else {
+                $("#blink-label").removeClass("blinking");
+            }
+            setTimeout(blink, 1000, value == 0 ? 255 : 0);
+        }
+
+        $(document).ready(function() {
+            var arduino = document.arduino;
+            arduino.open("/dev/cu.usbmodemfa131");
+            arduino.pinMode(8, true);
+            //start blinking
+            blink(0);
+        });
+    </script>
 </head>
 <body>
 <div id="blink-label">BLINK!</div>

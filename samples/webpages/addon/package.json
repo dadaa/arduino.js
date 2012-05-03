@@ -1,10 +1,11 @@
 {
-    "name": "arduino", 
-    "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
+    "name": "arduino-js", 
+    "license": "MPL 2.0", 
     "author": "Daisuke Akatsuka", 
     "version": "0.1", 
     "fullName": "arduino.js for webpages", 
     "id": "jid1-XxJkqbhF2p9Asw", 
     "description": "artduino.js for webpages",
-    "unpack":"true"
+    "unpack":"true",
+    "homepage":"http://www.mecha-mozilla.org/projects/arduino.js/"
 }
