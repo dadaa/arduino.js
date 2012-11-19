@@ -21,7 +21,8 @@ var pins = [
     {number:2, timerid: -1}
 ];
 
-arduino.open("/dev/cu.usbmodemfd121");
+//arduino.open("/dev/cu.usbmodemfd121");
+arduino.open("COM8");
 for (var i = 0, n = pins.length; i < n; i++) {
     var pin = pins[i];
     arduino.pinMode(pin.number, true);
