@@ -1,0 +1,11 @@
+EXPORTS
+	openArduino
+	digitalWrite
+	digitalRead
+	analogWrite
+	analogRead
+	pulse
+	pinMode
+	delayMicroseconds
+	closeArduino
+	invoke
