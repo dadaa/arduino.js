@@ -1,3 +1,6 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
 #include <stdio.h>
 #include <IOKit/IOKitLib.h>
 #include <IOKit/serial/IOSerialKeys.h>
@@ -8,9 +11,9 @@
 #include "ArduinoBridge.h"
 
 static int device_file_descriptor = -1;
+static const int BUFFER_SIZE = 16;
 
 void response(char* buffer) {
-	const int BUFFER_SIZE = 16;
 	char readBuffer[BUFFER_SIZE]; // buffer for holding incoming data
 	// this will loop unitl the serial port closes
 	while(TRUE) {
@@ -53,9 +56,10 @@ int openArduino(char* portname, char** error)
     const char *bsdPath = portname;
     struct termios gOriginalTTYAttrs;
     speed_t baudRate = 9600;
-	unsigned long mics = 3;
+	 unsigned long mics = 3;
     
-	int	serialFileDescriptor = open(bsdPath, O_RDWR | O_NOCTTY | O_NDELAY );
+	 int	serialFileDescriptor = open(bsdPath, O_RDWR | O_NOCTTY | O_NDELAY );
+    device_file_descriptor = serialFileDescriptor;
     // TIOCEXCL causes blocking of non-root processes on this serial-port
     if ( ioctl(serialFileDescriptor, TIOCEXCL) == -1) {
         *error = "Error: couldn't obtain lock on serial port";
@@ -105,11 +109,9 @@ int openArduino(char* portname, char** error)
         NSLog(@"%s", *error);
         return -1;
     }
-    
-    device_file_descriptor = serialFileDescriptor;
 
     //wait until Arduino finish the setup
-    char buffer[1];
+    char buffer[BUFFER_SIZE];
     memset(buffer , '\0' , sizeof(buffer));
     response(buffer);
     
@@ -120,7 +122,7 @@ int digitalWrite(int pin, int value, char** error)
 {
     char command[16];
     sprintf(command, "d%d,%d\r", pin, value);
-    char response[1];
+    char response[BUFFER_SIZE];
     memset(response , '\0' , sizeof(response));
     int result = invoke(command, response, error);
 
@@ -150,7 +152,7 @@ int analogWrite(int pin, int value, char** error)
 {
     char command[16];
     sprintf(command, "a%d,%d\r", pin, value);
-    char response[1];
+    char response[BUFFER_SIZE];
     memset(response , '\0' , sizeof(response));
     int result = invoke(command, response, error);
     
@@ -191,7 +193,7 @@ int pinMode(int pin, bool isOutput, char** error)
 {
     char command[16];
     sprintf(command, "p%d,%d\r", pin, isOutput == true ? 0 : 1);
-    char response[1];
+    char response[BUFFER_SIZE];
     int result = invoke(command, response, error);
     
 //    NSLog(@"pinMode:");
@@ -204,7 +206,7 @@ int delayMicroseconds(int value, char** error)
 {
     char command[16];
     sprintf(command, "w%d\r", value);
-    char response[1];
+    char response[BUFFER_SIZE];
     int result = invoke(command, response, error);
     
 //    NSLog(@"delayMicroseconds:");
