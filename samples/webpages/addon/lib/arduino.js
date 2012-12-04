@@ -78,7 +78,6 @@ var closeArduino = dylib.declare("closeArduino",
                           ctypes.default_abi,
                           ctypes.int32_t
                           );
-                          
 
 exports.open = function(portname) {
     var err = ctypes.char.ptr();
@@ -144,3 +143,17 @@ exports.close = function() {
     closeArduino();
     //dylib.close();
 }
+
+//from Firefox 17 __exposedProps__
+exports.__exposedProps__ = {
+    open: "r",
+    pinMode: "r",
+    digitalWrite: "r",
+    digitalRead: "r",
+    analogWrite: "r",
+    analogRead: "r",
+    pulse: "r",
+    delayMicroseconds: "r",
+    close: "r"
+}
+
