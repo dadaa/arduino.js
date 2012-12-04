@@ -26,7 +26,7 @@
     <script type="text/javascript">
         var blink = function(value) {
             var arduino = document.arduino;
-            arduino.analogWrite(8, value);
+            arduino.analogWrite(13, value);
             if (value == 255) {
                 $("#blink-label").addClass("blinking");
             } else {
@@ -38,7 +38,7 @@
         $(document).ready(function() {
             var arduino = document.arduino;
             arduino.open("/dev/cu.usbmodemfa131");
-            arduino.pinMode(8, true);
+            arduino.pinMode(13, true);
             //start blinking
             blink(0);
         });
