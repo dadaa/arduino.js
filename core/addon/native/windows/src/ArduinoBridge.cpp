@@ -81,8 +81,12 @@ RUNLOG("#### arduino.js # start openArduino...\n");
 	if(handle != NULL){
 		closeArduino();
 	}
-
-	handle = CreateFile(portname
+	
+	char port[16];
+	memset(port, '\0', sizeof(port));
+	_snprintf(port, sizeof(port)-1, "\\\\.\\%s", portname);
+	
+	handle = CreateFile(port
 		, GENERIC_READ | GENERIC_WRITE
 		, 0
 		, NULL
