@@ -4,10 +4,10 @@
 
 const {Cu, Ci, Cc} = require("chrome");
 const { ctypes } = Cu.import("resource://gre/modules/ctypes.jsm");
-const self = require("self");
-const url = require("url");
+const self = require('sdk/self');
+const url = require('sdk/url');
 
-const dylibURL = require("self").data.url(ctypes.libraryName('ArduinoBridge'));
+const dylibURL = require('sdk/self').data.url(ctypes.libraryName('ArduinoBridge'));
 const dylibPATH = url.toFilename(dylibURL).toString();
 const dylib = ctypes.open(dylibPATH);  
 
