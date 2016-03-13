@@ -4,12 +4,12 @@
 
 const {Cu, Ci, Cc} = require("chrome");
 const { ctypes } = Cu.import("resource://gre/modules/ctypes.jsm");
-const self = require('sdk/self');
-const url = require('sdk/url');
+const self = require("sdk/self");
+const url = require("sdk/url");
 
 const wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
 const mainWindow = wm.getMostRecentWindow("navigator:browser");
-const dylibURL = require('sdk/self').data.url(ctypes.libraryName('ArduinoBridge'));
+const dylibURL = require("sdk/self").data.url(ctypes.libraryName("ArduinoBridge"));
 const dylibPATH = url.toFilename(dylibURL).toString();
 const dylib = ctypes.open(dylibPATH);  
 
@@ -156,7 +156,7 @@ mainWindow.gBrowser.addEventListener("readystatechange", function(e) {
   if (doc.readyState != "interactive") {
     return;
   }
-  if(doc.hasOwnProperty('wrappedJSObject')){
+  if(doc.hasOwnProperty("wrappedJSObject")){
     doc.wrappedJSObject.arduino = Cu.cloneInto(
       arduino, doc, {cloneFunctions: true});
   }
